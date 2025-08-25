@@ -1,6 +1,7 @@
 import express from 'express'
 import connect from './db.js'
 import cors from 'cors'
+import donorRouter from './routes/donorRoutes.js'
 
 const PORT = process.env.PORT || 6000
 const app = express()

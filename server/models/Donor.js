@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 const donorSchema = new mongoose.Schema({
-    name:String,
+    name: String,
     email :String,
     password:String,
     contact:String,
