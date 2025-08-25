@@ -6,6 +6,7 @@ const receiverSchema = new mongoose.Schema({
     password: { type: String, required: true },
     income: { type: Number, required: true },  
     org_id: { type: Number, required: true }, 
+    location: { type: String, required: true },
     status: {
         type: String,
         enum: ['pending', 'approved', 'rejected', 'completed'],
