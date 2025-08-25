@@ -55,8 +55,6 @@ export const loginReceiver = async (req, res) => {
     if (!isMatch) {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
-
-    // Generate JWT Token
     const token = jwt.sign({ id: receiver._id, role: 'receiver' }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
     res.status(200).json({
@@ -97,7 +95,7 @@ export const createDonationRequest = async (req, res) => {
   }
 };
 
-
+//get my requests
 export const getDonationRequests = async (req, res) => {
   const receiverId = req.params.id;  
 
@@ -120,6 +118,9 @@ export const searchDonations = async (req, res) => {
     const query = {};
     if (category) query.category = category;
     if (location) query.location = location;
+    if (itemName) {
+      query.item = { $regex: itemName, $options: 'i' };  
+    }
     const donations = await DonorItemModel.find(query);
     res.status(200).json({ donations });
   } catch (error) {
