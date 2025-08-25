@@ -5,7 +5,7 @@ const adminSchema = new mongoose.Schema({
     email:{ type: String, required : true },
     password: String,
     
-})
+},{collection:'Admin'})
 
 const AdminModel = mongoose.model('Admin', adminSchema);
 
