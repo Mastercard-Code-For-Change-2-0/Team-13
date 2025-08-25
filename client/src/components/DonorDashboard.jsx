@@ -21,13 +21,10 @@ const DonorDashboard = ({ donorId = "donor123" }) => {
 
   return (
     <div className="max-w-7xl mx-auto p-8">
-      <header className="text-center mb-8 p-8 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-2xl shadow-xl">
-        <h1 className="text-4xl font-bold mb-2">
-          Seva Sahayog Foundation - Donor Portal
+      <header className="mb-8 p-8">
+        <h1 className="text-4xl font-bold mb-2 text-black text-left">
+          Donor Dashboard
         </h1>
-        <p className="text-xl opacity-90">
-          Make a difference in someone's life today
-        </p>
       </header>
 
       <nav className="flex gap-4 mb-8 bg-white p-4 rounded-xl shadow-lg">
