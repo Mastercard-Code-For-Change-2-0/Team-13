@@ -1,7 +1,10 @@
-import mongoose, { connect } from "mongoose";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
 
+
+dotenv.config();
 export default async function connect(){
-    mongoose.connect('mongodb+srv://vibhashah0108:7LWOFtPTx3h2yZrW@practice.kd3wynm.mongodb.net/?retryWrites=true&w=majority&appName=practice')
+    mongoose.connect(process.env.MONGO_URI)
     .then(()=>console.log('Mongo Connected'))
     .catch((err) => console.log("Error"))
 }
