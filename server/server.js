@@ -1,6 +1,8 @@
 import express from 'express'
 import connect from './db.js'
 import cors from 'cors'
+import receiverRouter from './routes/receiverRoutes.js'
+import adminRouter from './routes/adminRoutes.js'
 import donorRouter from './routes/donorRoutes.js'
 
 const PORT = process.env.PORT || 6000
@@ -13,8 +15,9 @@ app.use(express.json());
 
 
 // app.use('/api/donor', donorRouter);
-// app.use('/api/receiver',receiverRouter);
+app.use('/api/receiver',receiverRouter);
 // app.use('/api/admin',adminRouter);
+app.use('/api/admin',adminRouter);
 
 app.listen(PORT,()=>{
     console.log(`Server started at : ${PORT}`)
