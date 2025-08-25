@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 
-const donar_itemSchema = new mongoose.Schema({
+const donor_itemSchema = new mongoose.Schema({
     itemName: { type: String, required: true },
     quantity: { type: String, required: true },
     imageFileId: { type: mongoose.Schema.Types.ObjectId },

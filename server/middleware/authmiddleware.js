@@ -15,3 +15,13 @@ export const authenticate = (req, res, next) => {
     res.status(401).json({ message: 'Invalid or expired token' });
   }
 };
+export const authorizeRole = (requiredRole) => {
+  return (req, res, next) => {
+    const { role } = req.user;
+
+    if (role !== requiredRole) {
+      return res.status(403).json({ message: `Access denied: Requires ${requiredRole} role` });
+    }
+    next();
+  };
+};
